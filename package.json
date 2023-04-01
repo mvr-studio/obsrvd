@@ -1,7 +1,7 @@
 {
   "name": "@mvr-studio/obsrvd",
   "description": "Few kilobytes of a simple observable.",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "author": "Tomasz Marciniak <tomek@mvr.studio>",
   "license": "MIT",
   "main": "dist/index.js",

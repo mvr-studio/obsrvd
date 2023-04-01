@@ -11,6 +11,8 @@ yarn add @mvr-studio/obsrvd
 ## Usage
 
 ```tsx
+import { Observable } from '@mvr-studio/obsrvd'
+
 const simpleObserver = new Observable<boolean>(false)
 
 const Component = () => {
@@ -25,6 +27,6 @@ const Component = () => {
     return () => {
       simpleObserver.unsubscribe(setSimpleState)
     }
-  })
+  }, [])
 }
 ```
