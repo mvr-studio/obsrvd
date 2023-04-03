@@ -8,7 +8,7 @@ Dead simple Observable.
 yarn add @mvr-studio/obsrvd
 ```
 
-## Usage
+## Observable
 
 ```tsx
 import { Observable } from '@mvr-studio/obsrvd'
@@ -28,5 +28,18 @@ const Component = () => {
       simpleObserver.unsubscribe(setSimpleState)
     }
   }, [])
+}
+```
+
+## useObservable
+
+```tsx
+import { Observable, useObservable } from '@mvr-studio/obsrvd'
+
+const simpleObserver = new Observable<boolean>(false)
+
+const Component = () => {
+  const { value } = useObservable(simpleObserver)
+  // Now, when `simpleObserver` gets set outside the component, `value` will be up to date.
 }
 ```
