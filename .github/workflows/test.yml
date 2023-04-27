@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  test_and_deploy_ladle:
+  run_unit_tests:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
