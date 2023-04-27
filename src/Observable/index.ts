@@ -2,20 +2,20 @@ type Observer<T> = (data: T) => void
 type Subscriber<T> = Observer<T>
 
 class Observable<T> {
-  observers: Observer<T>[]
+  observers: Set<Observer<T>>
   value: any
 
   constructor(value: T) {
-    this.observers = []
+    this.observers = new Set()
     this.value = value
   }
 
   subscribe(subscriber: Subscriber<T>) {
-    this.observers.push(subscriber)
+    this.observers.add(subscriber)
   }
 
   unsubscribe(subscriber: Subscriber<T>) {
-    this.observers = this.observers.filter((observer) => observer !== subscriber)
+    this.observers.delete(subscriber)
   }
 
   get(): T {
